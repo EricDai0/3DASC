@@ -958,11 +958,11 @@ def parse_args():
                         help='whether to use STN on features in PointNet')
     parser.add_argument('--k', type=int, default=20, metavar='N',
                         help='Num of nearest neighbors to use')
-    parser.add_argument('--model1_path', type=str, default='/pretrain/modelnet/pointnet.pth',
+    parser.add_argument('--model1_path', type=str, default='/pretrain/shapenet/pointnet.pth',
                         help='Model weight to load, use config if not specified')
-    parser.add_argument('--model2_path', type=str, default='/pretrain/modelnet/dgcnn.pth',
+    parser.add_argument('--model2_path', type=str, default='/pretrain/shapenet/dgcnn.pth',
                         help='Model weight to load, use config if not specified')
-    parser.add_argument('--model3_path', type=str, default='/pretrain/modelnet/rpc.pth',
+    parser.add_argument('--model3_path', type=str, default='/pretrain/shapenet/rpc.pth',
                         help='Model weight to load, use config if not specified')
     parser.add_argument('--dropout', type=float, default=0.5,
                         help='dropout rate')
