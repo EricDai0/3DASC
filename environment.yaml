@@ -1,0 +1,16 @@
+name: pvd
+channels:
+  - pytorch
+  - defaults
+dependencies:
+  - python==3.6
+  - pip=20.3
+  - cudatoolkit=11.0
+  - pytorch=1.4.0
+  - torchvision=0.5.0
+  - numpy=1.19.2
+  - matplotlib=2.2.5
+  - tqdm=4.32.1
+  - open3d=0.9.0
+  - trimesh=3.7.12
+  - scipy=1.5.1
