@@ -1,0 +1,3 @@
+/home/xldai/3d-isometry-robust-master/models/rscnn_utils/build/CMakeFiles/rebuild_cache.dir
+/home/xldai/3d-isometry-robust-master/models/rscnn_utils/build/CMakeFiles/pointnet2_ext.dir
+/home/xldai/3d-isometry-robust-master/models/rscnn_utils/build/CMakeFiles/edit_cache.dir

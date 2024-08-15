@@ -1,0 +1,60 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/xldai/3d-isometry-robust-master/models/rscnn_utils/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5c7c6/fast && /usr/bin/make  -f CMakeFiles/cmTC_5c7c6.dir/build.make CMakeFiles/cmTC_5c7c6.dir/build
+make[1]: Entering directory '/home/xldai/3d-isometry-robust-master/models/rscnn_utils/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5c7c6.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -fPIC  -o CMakeFiles/cmTC_5c7c6.dir/src.c.o -c /home/xldai/3d-isometry-robust-master/models/rscnn_utils/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_5c7c6
+/home/xldai/anaconda3/envs/3DAdv/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5c7c6.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC  -rdynamic CMakeFiles/cmTC_5c7c6.dir/src.c.o -o cmTC_5c7c6 
+/usr/bin/ld: CMakeFiles/cmTC_5c7c6.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x5e): undefined reference to `pthread_cancel'
+/usr/bin/ld: src.c:(.text+0x6f): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_5c7c6.dir/build.make:106: cmTC_5c7c6] Error 1
+make[1]: Leaving directory '/home/xldai/3d-isometry-robust-master/models/rscnn_utils/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:140: cmTC_5c7c6/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/xldai/3d-isometry-robust-master/models/rscnn_utils/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_3f662/fast && /usr/bin/make  -f CMakeFiles/cmTC_3f662.dir/build.make CMakeFiles/cmTC_3f662.dir/build
+make[1]: Entering directory '/home/xldai/3d-isometry-robust-master/models/rscnn_utils/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3f662.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_3f662.dir/CheckFunctionExists.c.o -c /home/xldai/anaconda3/envs/3DAdv/share/cmake-3.19/Modules/CheckFunctionExists.c
+Linking C executable cmTC_3f662
+/home/xldai/anaconda3/envs/3DAdv/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3f662.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_3f662.dir/CheckFunctionExists.c.o -o cmTC_3f662  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_3f662.dir/build.make:106: cmTC_3f662] Error 1
+make[1]: Leaving directory '/home/xldai/3d-isometry-robust-master/models/rscnn_utils/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:140: cmTC_3f662/fast] Error 2
+
+
+
